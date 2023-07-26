@@ -22,7 +22,7 @@ data class Hobby(
 
 fun main(){
     val listaUsuarios: MutableList<PerfilUsuario> = mutableListOf()
-    var opción = readLine()!!.toInt()
+
     do{
         println("Bienvenido, seleccione una opción")
         println("1.- Crear Perfil")
@@ -30,18 +30,19 @@ fun main(){
         println("3.- Eliminar Perfil")
         println("4.- Agregar Hobby")
         println("5.- Salir")
+        var opción = readLine()!!.toInt()
         when(opción){
             1->{
-
+                println("Crea un perfil")
             }
             2->{
-
+                println("Buscar Usuario")
             }
             3->{
-
+                println("Eliminar Perfil/Usuario")
             }
             4->{
-
+                println("Agregar Hobby")
             }
             5->{
                 println("Eso fue todo!!")
