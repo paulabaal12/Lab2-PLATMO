@@ -19,10 +19,24 @@ data class Hobby(
     val Descripcion: String,
     val UrlPhoto: String)
 
-fun main(){
+fun main() {
 
     val listaUsuarios: MutableList<PerfilUsuario> = mutableListOf()
-    do{
+    // Usuarios precargados para pruebas
+    listaUsuarios.add(
+        PerfilUsuario(
+            161998, "Charles", "Leclerc", "image/jpeg;base64", 25, "lec1612@gmail.com",
+            "Piloto de F1", "Activo"
+        )
+    )
+    listaUsuarios.add(
+        PerfilUsuario(
+            131989, "Taylor", "Swift", "image/jpeg;base22", 33, "taytay13@gmail.com",
+            "Industria Musical, Cantante", "Activo"
+        )
+    )
+
+    do {
         println("Bienvenido, seleccione una opción")
         println("1.- Crear Perfil")
         println("2.- Buscar perfil de usuario(s)")
@@ -30,7 +44,7 @@ fun main(){
         println("4.- Agregar Hobby")
         println("5.- Salir")
         var opción = readLine()!!.toInt()
-        when(opción) {
+        when (opción) {
             1 -> {
                 println("Crea un perfil")
                 println("ID: ")
@@ -81,20 +95,23 @@ fun main(){
                             println("  URL: ${hobby.UrlPhoto}")
                         }
                         break
-                    }}}
+                    }
+                }
+            }
 
             3 -> {
                 println("Eliminar Perfil/Usuario, debe ingresar el ID")
                 val idingresado = readln().toIntOrNull()
                 val borrar = listaUsuarios.find { it.ID == idingresado }
-                if (idingresado != null){
-                listaUsuarios.remove(borrar)
-                println("Perfil eliminado/borrado")
-            }else {
-                println("No existe ningun usuario con ese ID")
+                if (idingresado != null) {
+                    listaUsuarios.remove(borrar)
+                    println("Perfil eliminado/borrado")
+                } else {
+                    println("No existe ningun usuario con ese ID")
+                }
             }
-        }
-            4->{
+
+            4 -> {
                 println("Agregar Hobby,Ingrese Apellido/Nombre o ID ")
                 val respuestausuario = readLine().toString()
                 val agregarhobby = listaUsuarios
@@ -108,16 +125,18 @@ fun main(){
 
                     val hobby = Hobby(Titulo, Descripcion, UrlPhoto)
                     println("Se agrego tu hobby")
-                }else{
+                } else {
                     println("No se pudo agregar tu hobby")
                 }
             }
-            5->{
-               println("Eso fue todo!!")
+
+            5 -> {
+                println("Eso fue todo!!")
             }
-            else->{
+
+            else -> {
                 println("Está opción no es valida :(")
             }
         }
-    } while(opción !=5)
+    } while (opción != 5)
 }
