@@ -22,7 +22,37 @@ data class Hobby(
 
 fun main(){
     val listaUsuarios: MutableList<PerfilUsuario> = mutableListOf()
+    var opción = readLine()!!.toInt()
+    do{
+        println("Bienvenido, seleccione una opción")
+        println("1.- Crear Perfil")
+        println("2.- Buscar perfil de usuario(s)")
+        println("3.- Eliminar Perfil")
+        println("4.- Agregar Hobby")
+        println("5.- Salir")
+        when(opción){
+            1->{
 
+            }
+            2->{
+
+            }
+            3->{
+
+            }
+            4->{
+
+            }
+            5->{
+                println("Eso fue todo!!")
+            }
+            else->{
+                println("Está opción no es valida :(")
+            }
+        }
+    } while(opción !=5)
+
+    //USUARIOS PREDETERMINADOS
     listaUsuarios.add(
         PerfilUsuario(
             161998,"Charles", "Leclerc", "image/jpeg;base64", 25, "lec1612@gmail.com",
